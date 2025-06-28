@@ -1,0 +1,8 @@
+<script>
+// adjust EC & wait time
+function sendSettings(){
+ fetch('/api/settings',{method:'POST',headers:{'Content-Type':'application/json'},
+  body:JSON.stringify({target_ec:document.getElementById('target_ec').value,
+                      wait_min:document.getElementById('wait_min').value})})
+  .then(r=>r.json()).then(a=>alert('Gespeichert')); }
+</script>
